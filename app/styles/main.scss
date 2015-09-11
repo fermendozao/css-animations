@@ -1,0 +1,73 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import 'doge-card';
+@import 'doge-bubble';
+@import 'navi';
+
+html, body{
+  min-height: 100%;
+  height: 100%;
+}
+
+body{
+  background: -webkit-linear-gradient(90deg, #4776E6 10%, #8E54E9 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #4776E6 10%, #8E54E9 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #4776E6 10%, #8E54E9 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #4776E6 10%, #8E54E9 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #4776E6 10%, #8E54E9 90%); /* W3C */
+}
+
+.cube-container{
+  perspective: 410px;
+  perspective-origin: 79% 40%;
+}
+
+.cube{
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  transform: translateZ( -100px );
+  transform-style: preserve-3d;
+
+  span{
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    font-size: 10em;
+    line-height: 1.4em;
+
+    &.front{
+      transform: translateZ(100px);
+      background: rgba(255,0, 0, .7);
+    }
+    &.back{
+      transform: rotate(-180deg) translateZ(-100px);
+      background: rgba(255,0, 0, .7);
+    }
+    &.right{
+      transform: rotateY( 90deg ) translateZ( 100px );
+      background: rgba(255,0, 0, .7);
+    }
+    &.left{
+      transform: rotateY( -90deg ) translateZ( 100px );
+      background: rgba(255,0, 0, .7);
+    }
+    &.top{
+      transform: rotateX( 90deg ) translateZ( 100px );
+      background: rgba(255,0, 0, .7);
+    }
+    &.bottom{
+      transform: rotateX( -90deg ) translateZ( 100px );
+      background: rgba(255,0, 0, .7);
+    }
+  }
+}
